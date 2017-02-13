@@ -176,7 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // REV20170213 twitter provider references
+        NotificationChannels\Twitter\TwitterServiceProvider::class,
     ],
 
     /*

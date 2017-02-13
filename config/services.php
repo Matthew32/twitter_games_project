@@ -34,5 +34,11 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'twitter' => [
+        'consumer_key'    => getenv('5V1E9adYfoKY2sTa1DdRZDNK9 '),
+        'consumer_secret' => getenv('E1nCQi0Z8mhZsaQO5ruWQG6UbqWx98DJDVo1cp8wIdRs6vkuD5'),
+        'access_token'    => getenv('831133079838265345-qhpj1Glr4lYQ9nVpYPV4EfyiYF03Ww6'),
+        'access_secret'   => getenv('aE9jbAZgoLiaYKDqgZTsoft78SvxcNq9iZlerbk4Kz50Z')
+    ]
 
 ];
