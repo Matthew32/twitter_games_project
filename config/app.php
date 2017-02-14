@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         // REV20170213 twitter provider references
         NotificationChannels\Twitter\TwitterServiceProvider::class,
+        'Thujohn\Twitter\TwitterServiceProvider',
     ],
 
     /*
@@ -226,6 +227,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
+
 
     ],
 
