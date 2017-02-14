@@ -179,6 +179,7 @@ return [
         // REV20170213 twitter provider references
         NotificationChannels\Twitter\TwitterServiceProvider::class,
         'Thujohn\Twitter\TwitterServiceProvider',
+        'J42\LaravelFirebase\LaravelFirebaseServiceProvider',
     ],
 
     /*
@@ -228,7 +229,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
-
+        'Firebase'        => 'J42\LaravelFirebase\LaravelFirebaseFacade'
 
     ],
 

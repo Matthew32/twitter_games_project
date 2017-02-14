@@ -65,6 +65,12 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+        'firebase' => array(
+            'host'      => 'https://gamerealese.firebaseio.com/',
+            'token'     => '4xFxq1BtXiGhl64mxcb7cmiTtTBQYhwmLO7930oB',
+            'timeout'   => 10,
+            'sync'      => false,           // OPTIONAL: auto-sync all Eloquent models with Firebase?
+        )
 
     ],
 

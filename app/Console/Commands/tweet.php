@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use \Twitter;
+use App\games;
 class tweet extends Command
 {
     /**
@@ -37,7 +38,17 @@ class tweet extends Command
      */
     public function handle()
     {
-        $this->info('POST TWEET!');
-        return Twitter::postTweet(['status' => 'Laravel is beautiful 3', 'format' => 'json']);
+        //this make to show a message when command execute
+        $now = new \DateTime();
+        $json= file_get_contents('https://gamerealese.firebaseio.com/games.json?auth=4xFxq1BtXiGhl64mxcb7cmiTtTBQYhwmLO7930oB');
+        $games = json_decode($json);
+        $uploaded_media = Twitter::uploadMedia(['media' =>file_get_contents($games->photo)]);
+        $future_date = new \DateTime($games->realese_day);
+
+        $interval = $future_date->diff($now);
+
+        $this->info('POST TWEET TIME!');
+        //make a tweet int he account
+        return Twitter::postTweet(['status' => $games->name . ' - '.$games->description .' - ' .$interval->format("%a days, %h hours, %i minutes, %s seconds") , 'media_ids' =>$uploaded_media->media_id_string, 'format' => 'json']);
     }
 }
