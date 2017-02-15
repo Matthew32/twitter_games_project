@@ -42,6 +42,7 @@ class tweet extends Command
         $now = new \DateTime();
         $json= file_get_contents('https://gamerealese.firebaseio.com/games.json?auth=4xFxq1BtXiGhl64mxcb7cmiTtTBQYhwmLO7930oB');
         $games = json_decode($json);
+	//get all json from server and make the parser to upload them
         foreach($games as $game){
           if($game->photo !=null){
             $uploaded_media = Twitter::uploadMedia(['media' =>file_get_contents($game->photo)]);
